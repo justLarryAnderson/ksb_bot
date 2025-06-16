@@ -1,9 +1,10 @@
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-user_data = InlineKeyboardMarkup(
+confirm_kb = InlineKeyboardMarkup(
     inline_keyboard=[
-        [InlineKeyboardButton(text='Введите ФИО', callback_data='full_name')],
-        [InlineKeyboardButton(text='Наименование образовательной организации', callback_data='university')]
+        [InlineKeyboardButton(text='Проверил, подтвердить данные', callback_data='confirm_data')],
+        [InlineKeyboardButton(text='Кажется нашел ошибку, исправлю', callback_data='change_data')]
     ]
 )
+
 

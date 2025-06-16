@@ -1,11 +1,13 @@
-from aiogram.types import ReplyKeyboardRemove, KeyboardButton
-from aiogram.utils.keyboard import ReplyKeyboardBuilder
+from aiogram.types import ReplyKeyboardRemove, KeyboardButton, ReplyKeyboardMarkup
 
 delite_kb = ReplyKeyboardRemove()
 
-start_keyboard = ReplyKeyboardBuilder()
-start_keyboard.add(
-    KeyboardButton(text='Введите ваше ФИО'),
-    KeyboardButton(text='Наименование образовательной организации')
-    )
-start_keyboard.adjust(1,1)
+registration_keyboard = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text='Хочу зарегестрироваться')],
+        [KeyboardButton(text='Изменить данные')]
+    ],
+    resize_keyboard=True,
+    input_field_placeholder='Введите свое ФИО и название образовательной организации полностью'
+)
+
